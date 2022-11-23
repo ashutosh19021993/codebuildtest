@@ -8,6 +8,7 @@ phases:
       - chmod +x ./kubectl ./aws-iam-authenticator
       - export PATH=$PWD/:$PATH
       - export KUBECONFIG=$HOME/.kube/config
-      - aws eks --region us-west-1 update-kubeconfig --name eks
-      - kubectl delete -f deploy-stage.yaml
-      - kubectl apply -f deploy-stage.yaml
+      - aws eks --region us-west-2 update-kubeconfig --name eks
+      - kubectl get ns
+      #- kubectl delete -f deploy-stage.yaml
+      #- kubectl apply -f deploy-stage.yaml
